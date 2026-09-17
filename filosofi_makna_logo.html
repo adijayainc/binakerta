@@ -1,0 +1,678 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yayasan Bina Kerta Utama | Filosofi & Makna Logo</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        navy: {
+                            700: '#183D75',
+                            800: '#0F2C59',
+                            900: '#0A1E3F',
+                        },
+                        gold: {
+                            400: '#F4C430',
+                            500: '#D4AF37',
+                            600: '#AA8929',
+                        },
+                        emerald: {
+                            500: '#10B981',
+                            600: '#2D7A54',
+                            700: '#1E583B',
+                        },
+                        cream: '#FDFBF7'
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        heading: ['Poppins', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        html { scroll-behavior: smooth; }
+        .logo-shadow {
+            filter: drop-shadow(0px 4px 12px rgba(15, 44, 89, 0.18));
+        }
+        .bg-pattern {
+            background-image: radial-gradient(#D4AF37 0.75px, transparent 0.75px), radial-gradient(#D4AF37 0.75px, #FDFBF7 0.75px);
+            background-size: 30px 30px;
+            background-position: 0 0, 15px 15px;
+            opacity: 0.15;
+        }
+        .hotspot-pulse {
+            animation: pulse-ring 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+        }
+        @keyframes pulse-ring {
+            0%, 100% { transform: scale(1); opacity: 0.8; }
+            50% { transform: scale(1.25); opacity: 0.3; }
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800 font-sans antialiased flex flex-col min-h-screen">
+
+    <!-- HEADER NAVBAR -->
+    <header class="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-gray-100 shadow-sm transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo & Brand Name -->
+                <a href="index.html" class="flex items-center gap-3 cursor-pointer">
+                    <!-- Emblem Logo Code -->
+                    <svg class="w-12 h-12 logo-shadow" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="100" cy="100" r="94" stroke="#0F2C59" stroke-width="8" fill="#FFFFFF"/>
+                        <circle cx="100" cy="100" r="84" stroke="#D4AF37" stroke-width="3" fill="none"/>
+                        <!-- Sun Rays -->
+                        <g stroke="#D4AF37" stroke-width="4" stroke-linecap="round">
+                            <line x1="100" y1="35" x2="100" y2="22"/>
+                            <line x1="75" y1="42" x2="67" y2="30"/>
+                            <line x1="125" y1="42" x2="133" y2="30"/>
+                            <line x1="55" y1="58" x2="44" y2="49"/>
+                            <line x1="145" y1="58" x2="156" y2="49"/>
+                        </g>
+                        <!-- Sun Disk -->
+                        <path d="M70 70 A35 35 0 0 1 130 70 Z" fill="#F4C430"/>
+                        <!-- Book -->
+                        <path d="M100 85 L145 72 V115 L100 128 Z" fill="#0F2C59"/>
+                        <path d="M100 85 L55 72 V115 L100 128 Z" fill="#183D75"/>
+                        <path d="M100 88 L142 75 V112 L100 125 Z" fill="#D4AF37" opacity="0.3"/>
+                        <path d="M100 85 L100 128" stroke="#D4AF37" stroke-width="3"/>
+                        <!-- Hands -->
+                        <path d="M45 140 C55 125, 80 135, 95 148 C80 155, 60 160, 45 140 Z" fill="#D4AF37"/>
+                        <path d="M155 140 C145 125, 120 135, 105 148 C120 155, 140 160, 155 140 Z" fill="#D4AF37"/>
+                        <!-- Sprout Leaf -->
+                        <path d="M100 142 C92 125, 75 125, 82 110 C98 115, 100 132, 100 142 Z" fill="#2D7A54"/>
+                        <path d="M100 142 C108 125, 125 125, 118 110 C102 115, 100 132, 100 142 Z" fill="#2D7A54"/>
+                    </svg>
+                    <div>
+                        <span class="block font-heading font-extrabold text-lg sm:text-xl text-navy-800 leading-tight tracking-tight">YAYASAN BINA KERTA UTAMA</span>
+                        <span class="block text-xs font-medium text-gold-600 tracking-wider">SK KEMENKUMHAM AHU-0012498.AH.01.04</span>
+                    </div>
+                </a>
+
+                <!-- Desktop Navigation Links -->
+                <nav class="hidden lg:flex items-center gap-6 font-medium text-sm text-gray-700">
+                    <a href="index.html" class="hover:text-navy-800 transition-colors py-2 px-1">Beranda</a>
+                    <a href="filosofi-logo.html" class="text-navy-800 font-semibold border-b-2 border-gold-500 py-2 px-1">Filosofi Logo</a>
+                    <a href="index.html#profil" class="hover:text-navy-800 transition-colors py-2 px-1">Profil & Legalitas</a>
+                    <a href="index.html#pendidikan" class="hover:text-navy-800 transition-colors py-2 px-1">TK Bina Harapan</a>
+                    <a href="index.html#sosial" class="hover:text-navy-800 transition-colors py-2 px-1">Sosial & Hukum (KBH)</a>
+                </nav>
+
+                <!-- Mobile Hamburger Button -->
+                <button onclick="toggleMobileMenu()" class="lg:hidden p-2 rounded-lg text-navy-800 hover:bg-gray-100 focus:outline-none">
+                    <i data-lucide="menu" class="w-7 h-7"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Drawer -->
+        <div id="mobileMenu" class="hidden lg:hidden border-t border-gray-100 bg-white px-4 pt-3 pb-6 space-y-3 shadow-lg">
+            <a href="index.html" class="block w-full text-left py-2 font-medium text-navy-800 hover:bg-gray-50 rounded px-2">Beranda</a>
+            <a href="filosofi-logo.html" class="block w-full text-left py-2 font-semibold text-navy-800 bg-amber-50 rounded px-2">Filosofi Logo</a>
+            <a href="index.html#profil" class="block w-full text-left py-2 font-medium text-navy-800 hover:bg-gray-50 rounded px-2">Profil & Legalitas</a>
+            <a href="index.html#pendidikan" class="block w-full text-left py-2 font-medium text-navy-800 hover:bg-gray-50 rounded px-2">TK Bina Harapan</a>
+            <a href="index.html#sosial" class="block w-full text-left py-2 font-medium text-navy-800 hover:bg-gray-50 rounded px-2">Sosial & Hukum (KBH)</a>
+        </div>
+    </header>
+
+    <!-- MAIN CONTENT AREA -->
+    <main class="flex-grow">
+        <!-- Hero Header -->
+        <section class="relative bg-navy-900 text-white py-14 overflow-hidden border-b border-gold-500/30">
+            <div class="absolute inset-0 bg-pattern"></div>
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+                <!-- Breadcrumb -->
+                <nav class="flex items-center gap-2 text-xs text-gold-400 mb-3">
+                    <a href="index.html" class="hover:underline flex items-center gap-1">
+                        <i data-lucide="home" class="w-3.5 h-3.5"></i> Beranda
+                    </a>
+                    <span>/</span>
+                    <span class="text-gray-300">Tentang Kami</span>
+                    <span>/</span>
+                    <span class="text-white font-medium">Filosofi & Makna Logo</span>
+                </nav>
+                <h1 class="font-heading font-extrabold text-3xl sm:text-5xl text-white tracking-tight">
+                    Filosofi & Makna Logo
+                </h1>
+                <p class="text-gray-300 text-sm sm:text-base mt-2 max-w-3xl leading-relaxed">
+                    Setiap lengkungan, warna, dan simbol dalam lambang Yayasan Bina Kerta Utama merefleksikan nilai luhur kepedulian sosial, pendidikan usia dini, pengayoman hukum, serta ikhtiar membina masa depan generasi bangsa.
+                </p>
+            </div>
+        </section>
+
+        <!-- SECTION 1: INTERACTIVE LOGO EXPLORER -->
+        <section class="py-14 bg-white border-b border-gray-100">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center max-w-2xl mx-auto mb-10">
+                    <span class="text-xs font-bold tracking-widest text-gold-600 uppercase">Identitas Visual</span>
+                    <h2 class="font-heading font-bold text-2xl sm:text-3xl text-navy-900 mt-1">Eksplorasi Simbolisme Logo</h2>
+                    <p class="text-xs sm:text-sm text-gray-500 mt-1">Klik atau sorot elemen di bawah ini untuk melihat makna mendalam di balik tiap bagian lambang.</p>
+                </div>
+
+                <div class="grid lg:grid-cols-12 gap-10 items-center">
+                    <!-- Interactive Emblem Visual -->
+                    <div class="lg:col-span-6 flex justify-center">
+                        <div class="relative bg-cream p-8 sm:p-12 rounded-3xl border border-gold-500/20 shadow-xl max-w-md w-full flex justify-center items-center">
+                            
+                            <!-- Large SVG Emblem with Interactive Hotspots -->
+                            <div class="relative w-64 h-64 sm:w-80 sm:h-80">
+                                <svg id="mainLogoSvg" class="w-full h-full logo-shadow transition-transform duration-500 hover:scale-105" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <!-- Double Ring -->
+                                    <circle id="el-ring" cx="100" cy="100" r="94" stroke="#0F2C59" stroke-width="8" fill="#FFFFFF" class="transition-all duration-300 cursor-pointer" onclick="selectElement('ring')"/>
+                                    <circle cx="100" cy="100" r="84" stroke="#D4AF37" stroke-width="3" fill="none"/>
+                                    
+                                    <!-- Sun Rays & Disk -->
+                                    <g id="el-sun" class="transition-all duration-300 cursor-pointer" onclick="selectElement('sun')">
+                                        <g stroke="#D4AF37" stroke-width="4" stroke-linecap="round">
+                                            <line x1="100" y1="35" x2="100" y2="22"/>
+                                            <line x1="75" y1="42" x2="67" y2="30"/>
+                                            <line x1="125" y1="42" x2="133" y2="30"/>
+                                            <line x1="55" y1="58" x2="44" y2="49"/>
+                                            <line x1="145" y1="58" x2="156" y2="49"/>
+                                        </g>
+                                        <path d="M70 70 A35 35 0 0 1 130 70 Z" fill="#F4C430"/>
+                                    </g>
+                                    
+                                    <!-- Book -->
+                                    <g id="el-book" class="transition-all duration-300 cursor-pointer" onclick="selectElement('book')">
+                                        <path d="M100 85 L145 72 V115 L100 128 Z" fill="#0F2C59"/>
+                                        <path d="M100 85 L55 72 V115 L100 128 Z" fill="#183D75"/>
+                                        <path d="M100 88 L142 75 V112 L100 125 Z" fill="#D4AF37" opacity="0.4"/>
+                                        <path d="M100 85 L100 128" stroke="#D4AF37" stroke-width="3"/>
+                                    </g>
+                                    
+                                    <!-- Hands -->
+                                    <g id="el-hands" class="transition-all duration-300 cursor-pointer" onclick="selectElement('hands')">
+                                        <path d="M45 140 C55 125, 80 135, 95 148 C80 155, 60 160, 45 140 Z" fill="#D4AF37"/>
+                                        <path d="M155 140 C145 125, 120 135, 105 148 C120 155, 140 160, 155 140 Z" fill="#D4AF37"/>
+                                    </g>
+                                    
+                                    <!-- Sprout Leaf -->
+                                    <g id="el-sprout" class="transition-all duration-300 cursor-pointer" onclick="selectElement('sprout')">
+                                        <path d="M100 142 C92 125, 75 125, 82 110 C98 115, 100 132, 100 142 Z" fill="#2D7A54"/>
+                                        <path d="M100 142 C108 125, 125 125, 118 110 C102 115, 100 132, 100 142 Z" fill="#2D7A54"/>
+                                    </g>
+                                </svg>
+
+                                <!-- Interactive Hotspot Overlay Pins -->
+                                <button onclick="selectElement('sun')" class="absolute top-[18%] left-[47%] w-5 h-5 bg-gold-400 border-2 border-white rounded-full flex items-center justify-center text-navy-900 font-bold text-[10px] shadow-lg hover:scale-125 transition-transform" title="Matahari Terbit">1</button>
+                                <button onclick="selectElement('book')" class="absolute top-[42%] left-[47%] w-5 h-5 bg-navy-800 border-2 border-white text-white rounded-full flex items-center justify-center font-bold text-[10px] shadow-lg hover:scale-125 transition-transform" title="Buku Terbuka">2</button>
+                                <button onclick="selectElement('sprout')" class="absolute bottom-[32%] left-[47%] w-5 h-5 bg-emerald-600 border-2 border-white text-white rounded-full flex items-center justify-center font-bold text-[10px] shadow-lg hover:scale-125 transition-transform" title="Tunas Hijau">3</button>
+                                <button onclick="selectElement('hands')" class="absolute bottom-[18%] left-[22%] w-5 h-5 bg-gold-500 border-2 border-white text-navy-900 rounded-full flex items-center justify-center font-bold text-[10px] shadow-lg hover:scale-125 transition-transform" title="Tangan Pengasuh">4</button>
+                                <button onclick="selectElement('ring')" class="absolute top-[5%] right-[10%] w-5 h-5 bg-navy-900 border-2 border-white text-gold-400 rounded-full flex items-center justify-center font-bold text-[10px] shadow-lg hover:scale-125 transition-transform" title="Lingkaran Segel">5</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Dynamic Description Panel -->
+                    <div class="lg:col-span-6 space-y-4">
+                        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-navy-50 text-navy-800 text-xs font-semibold">
+                            <i data-lucide="info" class="w-3.5 h-3.5 text-gold-600"></i> Klik elemen logo atau nomor hotspot
+                        </div>
+
+                        <!-- Panel Output Content -->
+                        <div id="inspectorCard" class="bg-white p-6 sm:p-8 rounded-2xl border-2 border-gold-500/30 shadow-md transition-all duration-300">
+                            <div class="flex items-center gap-3 mb-3">
+                                <div id="inspectorIcon" class="w-10 h-10 rounded-xl bg-navy-800 text-gold-400 flex items-center justify-center font-bold">
+                                    <i data-lucide="book-open" class="w-5 h-5"></i>
+                                </div>
+                                <div>
+                                    <span id="inspectorTag" class="text-[10px] font-bold text-gold-600 uppercase tracking-widest">Pilar Utama</span>
+                                    <h3 id="inspectorTitle" class="font-heading font-bold text-xl text-navy-900">Buku Terbuka (Pendidikan)</h3>
+                                </div>
+                            </div>
+                            <p id="inspectorBody" class="text-sm text-gray-600 leading-relaxed mb-4">
+                                Melambangkan komitmen utama Yayasan Bina Kerta Utama dalam mengelola unit pendidikan PAUD & TK Bina Harapan I - IV. Buku yang terbuka melambangkan jendela ilmu, pembentukan karakter anak, dan semangat belajar sepanjang hayat.
+                            </p>
+                            <div class="pt-3 border-t border-gray-100 flex items-center justify-between text-xs">
+                                <span class="text-gray-400">Nilai Filosofis:</span>
+                                <span id="inspectorValue" class="font-semibold text-navy-800">Cerdas, Berkarakter & Intelektual</span>
+                            </div>
+                        </div>
+
+                        <!-- Selector Quick Buttons -->
+                        <div class="grid grid-cols-2 sm:grid-cols-3 gap-2 pt-2">
+                            <button onclick="selectElement('book')" class="p-2.5 rounded-xl border text-xs font-medium text-left hover:bg-navy-50 border-gray-200 transition-colors flex items-center gap-2">
+                                <span class="w-2 h-2 rounded-full bg-navy-800"></span> Buku Terbuka
+                            </button>
+                            <button onclick="selectElement('hands')" class="p-2.5 rounded-xl border text-xs font-medium text-left hover:bg-navy-50 border-gray-200 transition-colors flex items-center gap-2">
+                                <span class="w-2 h-2 rounded-full bg-gold-500"></span> Tangan Pengasuh
+                            </button>
+                            <button onclick="selectElement('sprout')" class="p-2.5 rounded-xl border text-xs font-medium text-left hover:bg-navy-50 border-gray-200 transition-colors flex items-center gap-2">
+                                <span class="w-2 h-2 rounded-full bg-emerald-600"></span> Tunas Hijau
+                            </button>
+                            <button onclick="selectElement('sun')" class="p-2.5 rounded-xl border text-xs font-medium text-left hover:bg-navy-50 border-gray-200 transition-colors flex items-center gap-2">
+                                <span class="w-2 h-2 rounded-full bg-gold-400"></span> Matahari Terbit
+                            </button>
+                            <button onclick="selectElement('ring')" class="p-2.5 rounded-xl border text-xs font-medium text-left hover:bg-navy-50 border-gray-200 transition-colors flex items-center gap-2">
+                                <span class="w-2 h-2 rounded-full bg-navy-900"></span> Lingkaran Segel
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 2: DETAILED ELEMENTS BREAKDOWN -->
+        <section class="py-16 bg-gray-50">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center max-w-3xl mx-auto mb-12">
+                    <h2 class="font-heading font-bold text-3xl text-navy-900">Bedah Makna 5 Elemen Utama</h2>
+                    <p class="text-gray-600 text-sm mt-2">Integrasi dari pilar pendidikan, hukum, sosial, dan ketahanan kelembagaan.</p>
+                </div>
+
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Card 1 -->
+                    <div class="bg-white p-8 rounded-2xl border border-gray-200 shadow-sm hover:shadow-md transition-all">
+                        <div class="w-12 h-12 bg-navy-800 text-gold-400 rounded-xl flex items-center justify-center mb-5">
+                            <i data-lucide="book-open" class="w-6 h-6"></i>
+                        </div>
+                        <h3 class="font-heading font-bold text-xl text-navy-900 mb-2">1. Buku Terbuka</h3>
+                        <p class="text-xs font-bold text-gold-600 uppercase tracking-wider mb-3">Pendidikan & Pengetahuan</p>
+                        <p class="text-sm text-gray-600 leading-relaxed">
+                            Mewakili unit pendidikan TK Bina Harapan I–IV. Buku terbuka menyimbolkan keterbukaan fikiran, semangat belajar usia dini, serta landasan iman dan ilmu pengetahuan yang ditanamkan sejak kecil.
+                        </p>
+                    </div>
+
+                    <!-- Card 2 -->
+                    <div class="bg-white p-8 rounded-2xl border border-gray-200 shadow-sm hover:shadow-md transition-all">
+                        <div class="w-12 h-12 bg-gold-500 text-navy-900 rounded-xl flex items-center justify-center mb-5">
+                            <i data-lucide="heart-handshake" class="w-6 h-6"></i>
+                        </div>
+                        <h3 class="font-heading font-bold text-xl text-navy-900 mb-2">2. Tangan Pengasuh</h3>
+                        <p class="text-xs font-bold text-gold-600 uppercase tracking-wider mb-3">Kepedulian & Pelayanan Hukum</p>
+                        <p class="text-sm text-gray-600 leading-relaxed">
+                            Dua telapak tangan emas yang menopang menyimbolkan pengayoman sosial dan layanan bantuan hukum (KBH). Yayasan siap merangkul, melindungi, dan menolong warga miskin serta anak yatim.
+                        </p>
+                    </div>
+
+                    <!-- Card 3 -->
+                    <div class="bg-white p-8 rounded-2xl border border-gray-200 shadow-sm hover:shadow-md transition-all">
+                        <div class="w-12 h-12 bg-emerald-600 text-white rounded-xl flex items-center justify-center mb-5">
+                            <i data-lucide="sprout" class="w-6 h-6"></i>
+                        </div>
+                        <h3 class="font-heading font-bold text-xl text-navy-900 mb-2">3. Tunas Hijau</h3>
+                        <p class="text-xs font-bold text-emerald-600 uppercase tracking-wider mb-3">Pertumbuhan & Generasi Muda</p>
+                        <p class="text-sm text-gray-600 leading-relaxed">
+                            Sebuah tunas tanaman muda melambangkan benih potensi anak-anak yang tumbuh berkembang. Warna hijau mewakili kesegaran, harapan baru, kehidupan yang harmonis, dan kepedulian lingkungan.
+                        </p>
+                    </div>
+
+                    <!-- Card 4 -->
+                    <div class="bg-white p-8 rounded-2xl border border-gray-200 shadow-sm hover:shadow-md transition-all">
+                        <div class="w-12 h-12 bg-amber-400 text-navy-900 rounded-xl flex items-center justify-center mb-5">
+                            <i data-lucide="sun" class="w-6 h-6"></i>
+                        </div>
+                        <h3 class="font-heading font-bold text-xl text-navy-900 mb-2">4. Matahari Terbit</h3>
+                        <p class="text-xs font-bold text-gold-600 uppercase tracking-wider mb-3">Masa Depan & Pencerahan</p>
+                        <p class="text-sm text-gray-600 leading-relaxed">
+                            Sinar matahari memancar dari balik buku memberikan penerangan, mengikis kebodohan, dan melambangkan masa depan cerah bagi para santri dan peserta didik Bina Kerta Utama.
+                        </p>
+                    </div>
+
+                    <!-- Card 5 -->
+                    <div class="bg-white p-8 rounded-2xl border border-gray-200 shadow-sm hover:shadow-md transition-all md:col-span-2 lg:col-span-2">
+                        <div class="w-12 h-12 bg-navy-900 text-gold-400 rounded-xl flex items-center justify-center mb-5">
+                            <i data-lucide="shield" class="w-6 h-6"></i>
+                        </div>
+                        <h3 class="font-heading font-bold text-xl text-navy-900 mb-2">5. Lingkaran Ganda & Segel Kemenkumham</h3>
+                        <p class="text-xs font-bold text-gold-600 uppercase tracking-wider mb-3">Legalitas, Kesatuan & Keutuhan</p>
+                        <p class="text-sm text-gray-600 leading-relaxed">
+                            Bentuk emblem melingkar sempurna menyimbolkan ikatan kekeluargaan yang utuh serta ketahanan organisasi. Garis bingkai ganda menegaskan bahwa Yayasan Bina Kerta Utama berdiri kokoh sebagai badan hukum sah bertanda registrasi <strong>SK Kemenkumham AHU-0012498.AH.01.04</strong>.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 3: COLOR PALETTE MATRIX -->
+        <section class="py-16 bg-white border-t border-b border-gray-100">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center max-w-3xl mx-auto mb-12">
+                    <span class="text-xs font-bold tracking-widest text-gold-600 uppercase">Palet Warna Resmi</span>
+                    <h2 class="font-heading font-bold text-3xl text-navy-900 mt-1">Kode Warna & Arti Psikologis</h2>
+                    <p class="text-gray-500 text-sm mt-1">Standar warna identitas merek untuk dokumen resmi, media cetak, dan digital.</p>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <!-- Color 1 -->
+                    <div class="bg-white rounded-2xl border border-gray-200 overflow-hidden shadow-sm">
+                        <div class="h-28 bg-navy-800 p-4 flex flex-col justify-between text-white">
+                            <span class="text-xs font-semibold uppercase opacity-75">Warna Utama</span>
+                            <span class="font-mono text-sm font-bold">#0F2C59</span>
+                        </div>
+                        <div class="p-5 space-y-2">
+                            <h4 class="font-heading font-bold text-navy-900">Biru Navy (Deep Royal)</h4>
+                            <p class="text-xs text-gray-600 leading-relaxed">
+                                Melambangkan integritas, kedalaman ilmu, profesionalisme, keadilan hukum, dan stabilitas kelembagaan.
+                            </p>
+                            <div class="pt-2 text-[11px] font-mono text-gray-500">
+                                RGB: 15, 44, 89 | CMYK: 83, 51, 0, 65
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Color 2 -->
+                    <div class="bg-white rounded-2xl border border-gray-200 overflow-hidden shadow-sm">
+                        <div class="h-28 bg-gold-500 p-4 flex flex-col justify-between text-navy-900">
+                            <span class="text-xs font-semibold uppercase opacity-75">Warna Aksen 1</span>
+                            <span class="font-mono text-sm font-bold">#D4AF37</span>
+                        </div>
+                        <div class="p-5 space-y-2">
+                            <h4 class="font-heading font-bold text-navy-900">Emas (Warm Gold)</h4>
+                            <p class="text-xs text-gray-600 leading-relaxed">
+                                Melambangkan kemuliaan, prestasi unggul, nilai luhur budi pekerti, dan harapan akan keagungan masa depan.
+                            </p>
+                            <div class="pt-2 text-[11px] font-mono text-gray-500">
+                                RGB: 212, 175, 55 | CMYK: 0, 17, 74, 17
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Color 3 -->
+                    <div class="bg-white rounded-2xl border border-gray-200 overflow-hidden shadow-sm">
+                        <div class="h-28 bg-emerald-600 p-4 flex flex-col justify-between text-white">
+                            <span class="text-xs font-semibold uppercase opacity-75">Warna Aksen 2</span>
+                            <span class="font-mono text-sm font-bold">#2D7A54</span>
+                        </div>
+                        <div class="p-5 space-y-2">
+                            <h4 class="font-heading font-bold text-navy-900">Hijau Zamrud (Emerald)</h4>
+                            <p class="text-xs text-gray-600 leading-relaxed">
+                                Melambangkan pertumbuhan anak usia dini, kesejahteraan sosial, kesegaran jiwa, serta keberkahan.
+                            </p>
+                            <div class="pt-2 text-[11px] font-mono text-gray-500">
+                                RGB: 45, 122, 84 | CMYK: 63, 0, 31, 52
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Color 4 -->
+                    <div class="bg-white rounded-2xl border border-gray-200 overflow-hidden shadow-sm">
+                        <div class="h-28 bg-gray-100 p-4 flex flex-col justify-between text-navy-900 border-b">
+                            <span class="text-xs font-semibold uppercase opacity-75">Warna Netral</span>
+                            <span class="font-mono text-sm font-bold">#FFFFFF / #FDFBF7</span>
+                        </div>
+                        <div class="p-5 space-y-2">
+                            <h4 class="font-heading font-bold text-navy-900">Putih Bersih (Pure White)</h4>
+                            <p class="text-xs text-gray-600 leading-relaxed">
+                                Melambangkan keikhlasan dalam mengabdi, kejujuran transparansi kelola dana, dan kesucian niat.
+                            </p>
+                            <div class="pt-2 text-[11px] font-mono text-gray-500">
+                                RGB: 255, 255, 255 | CMYK: 0, 0, 0, 0
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 4: BRAND USAGE GUIDELINES & ASSETS -->
+        <section class="py-16 bg-navy-900 text-white relative">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid lg:grid-cols-12 gap-10 items-center">
+                    
+                    <div class="lg:col-span-7 space-y-6">
+                        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 text-gold-400 text-xs font-semibold border border-white/20">
+                            <i data-lucide="download-cloud" class="w-4 h-4"></i> Panduan Penggunaan Logo Resmi
+                        </div>
+                        <h2 class="font-heading font-bold text-3xl sm:text-4xl text-white">Ketentuan Penggunaan & Unduh Aset</h2>
+                        <p class="text-gray-300 text-sm leading-relaxed">
+                            Logo Yayasan Bina Kerta Utama wajib digunakan pada kuitansi resmi, surat keputusan, ijazah TK Bina Harapan, spanduk kegiatan KBH, dan seragam resmi sesuai rasio standar.
+                        </p>
+
+                        <div class="grid sm:grid-cols-2 gap-4 text-xs">
+                            <div class="p-4 bg-white/5 rounded-xl border border-white/10">
+                                <h4 class="font-bold text-gold-400 mb-1 flex items-center gap-1.5">
+                                    <i data-lucide="check" class="w-4 h-4 text-emerald-400"></i> Area Aman (Clear Space)
+                                </h4>
+                                <p class="text-gray-300">Berikan margin minimal 10% dari diameter logo di sekeliling bingkai luar.</p>
+                            </div>
+                            <div class="p-4 bg-white/5 rounded-xl border border-white/10">
+                                <h4 class="font-bold text-gold-400 mb-1 flex items-center gap-1.5">
+                                    <i data-lucide="x" class="w-4 h-4 text-rose-400"></i> Larangan Distorsi
+                                </h4>
+                                <p class="text-gray-300">Dilarang mengubah proporsi (gepeng/pipih) atau mengganti susunan warna resmi.</p>
+                            </div>
+                        </div>
+
+                        <!-- Action Buttons -->
+                        <div class="pt-4 flex flex-wrap gap-4">
+                            <button onclick="downloadSvgLogo()" class="bg-gold-500 hover:bg-gold-600 text-navy-900 font-bold px-6 py-3 rounded-xl text-xs flex items-center gap-2 shadow-lg transition-all">
+                                <i data-lucide="file-code" class="w-4 h-4"></i> Unduh Master Logo (Vector SVG)
+                            </button>
+                            <button onclick="showToast('Master PNG Siap', 'File PNG resolusi tinggi transparan siap diunduh.')" class="bg-white/10 hover:bg-white/20 text-white font-medium px-6 py-3 rounded-xl text-xs border border-white/20 flex items-center gap-2 transition-all">
+                                <i data-lucide="image" class="w-4 h-4 text-gold-400"></i> Unduh HD PNG (Transparan)
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Visual Variants Preview Box -->
+                    <div class="lg:col-span-5 bg-navy-800 p-6 rounded-3xl border border-gold-500/30 text-center shadow-2xl">
+                        <h4 class="font-heading font-bold text-sm text-gold-400 uppercase tracking-widest mb-4">Variasi Latar Belakang</h4>
+                        
+                        <div class="grid grid-cols-2 gap-4">
+                            <!-- Standard Color Light -->
+                            <div class="bg-white p-4 rounded-xl text-center">
+                                <svg class="w-20 h-20 mx-auto mb-2" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <circle cx="100" cy="100" r="94" stroke="#0F2C59" stroke-width="8" fill="#FFFFFF"/>
+                                    <circle cx="100" cy="100" r="84" stroke="#D4AF37" stroke-width="3" fill="none"/>
+                                    <path d="M70 70 A35 35 0 0 1 130 70 Z" fill="#F4C430"/>
+                                    <path d="M100 85 L145 72 V115 L100 128 Z" fill="#0F2C59"/>
+                                    <path d="M100 85 L55 72 V115 L100 128 Z" fill="#183D75"/>
+                                    <path d="M45 140 C55 125, 80 135, 95 148 C80 155, 60 160, 45 140 Z" fill="#D4AF37"/>
+                                    <path d="M155 140 C145 125, 120 135, 105 148 C120 155, 140 160, 155 140 Z" fill="#D4AF37"/>
+                                    <path d="M100 142 C92 125, 75 125, 82 110 C98 115, 100 132, 100 142 Z" fill="#2D7A54"/>
+                                    <path d="M100 142 C108 125, 125 125, 118 110 C102 115, 100 132, 100 142 Z" fill="#2D7A54"/>
+                                </svg>
+                                <span class="text-[10px] font-bold text-navy-900 block">Full Color (Light BG)</span>
+                            </div>
+
+                            <!-- Monochrome Gold/White Dark -->
+                            <div class="bg-navy-900 border border-white/20 p-4 rounded-xl text-center">
+                                <svg class="w-20 h-20 mx-auto mb-2" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <circle cx="100" cy="100" r="94" stroke="#FFFFFF" stroke-width="8" fill="#0F2C59"/>
+                                    <circle cx="100" cy="100" r="84" stroke="#D4AF37" stroke-width="3" fill="none"/>
+                                    <path d="M70 70 A35 35 0 0 1 130 70 Z" fill="#F4C430"/>
+                                    <path d="M100 85 L145 72 V115 L100 128 Z" fill="#FFFFFF"/>
+                                    <path d="M100 85 L55 72 V115 L100 128 Z" fill="#D4AF37"/>
+                                    <path d="M45 140 C55 125, 80 135, 95 148 C80 155, 60 160, 45 140 Z" fill="#D4AF37"/>
+                                    <path d="M155 140 C145 125, 120 135, 105 148 C120 155, 140 160, 155 140 Z" fill="#D4AF37"/>
+                                    <path d="M100 142 C92 125, 75 125, 82 110 C98 115, 100 132, 100 142 Z" fill="#10B981"/>
+                                    <path d="M100 142 C108 125, 125 125, 118 110 C102 115, 100 132, 100 142 Z" fill="#10B981"/>
+                                </svg>
+                                <span class="text-[10px] font-bold text-gold-400 block">Monochrome (Dark BG)</span>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Notification Toast -->
+    <div id="toastNotification" class="fixed bottom-6 right-6 z-50 hidden bg-navy-900 text-white px-6 py-4 rounded-2xl shadow-2xl border border-gold-500/40 flex items-center gap-3">
+        <i data-lucide="check-circle-2" class="w-6 h-6 text-emerald-400"></i>
+        <div>
+            <h5 id="toastTitle" class="font-bold text-sm">Unduh Dimulai</h5>
+            <p id="toastMessage" class="text-xs text-gray-300">File aset logo sedang disiapkan.</p>
+        </div>
+    </div>
+
+    <!-- FOOTER SECTION -->
+    <footer class="bg-navy-900 text-white border-t border-gold-500/20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+                <!-- Brand Info -->
+                <div class="md:col-span-2 space-y-4">
+                    <div class="flex items-center gap-3">
+                        <svg class="w-10 h-10" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="100" cy="100" r="94" stroke="#FFFFFF" stroke-width="8" fill="#0F2C59"/>
+                            <circle cx="100" cy="100" r="84" stroke="#D4AF37" stroke-width="3" fill="none"/>
+                            <path d="M70 70 A35 35 0 0 1 130 70 Z" fill="#F4C430"/>
+                            <path d="M100 85 L145 72 V115 L100 128 Z" fill="#FFFFFF"/>
+                            <path d="M100 85 L55 72 V115 L100 128 Z" fill="#D4AF37"/>
+                        </svg>
+                        <span class="font-heading font-extrabold text-lg text-white">YAYASAN BINA KERTA UTAMA</span>
+                    </div>
+                    <p class="text-gray-400 text-xs leading-relaxed max-w-md">
+                        Lembaga nirlaba pengelola unit pendidikan Taman Kanak-Kanak Bina Harapan serta penyelenggara kegiatan sosial kemasyarakatan dan bantuan hukum bagi masyarakat.
+                    </p>
+                    <div class="text-xs text-gold-400">
+                        SK KEMENKUMHAM: AHU-0012498.AH.01.04
+                    </div>
+                </div>
+
+                <!-- Navigation Links -->
+                <div>
+                    <h4 class="font-heading font-bold text-sm text-gold-400 mb-3">Tautan Cepat</h4>
+                    <ul class="space-y-2 text-xs text-gray-300">
+                        <li><a href="index.html" class="hover:text-white">Beranda Utama</a></li>
+                        <li><a href="filosofi-logo.html" class="hover:text-white">Filosofi Logo</a></li>
+                        <li><a href="index.html#profil" class="hover:text-white">Profil & Legalitas</a></li>
+                        <li><a href="index.html#pendidikan" class="hover:text-white">TK Bina Harapan I-IV</a></li>
+                        <li><a href="index.html#sosial" class="hover:text-white">Bantuan Hukum (KBH)</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact Info -->
+                <div>
+                    <h4 class="font-heading font-bold text-sm text-gold-400 mb-3">Kontak Pusat</h4>
+                    <ul class="space-y-2 text-xs text-gray-300">
+                        <li class="flex items-center gap-2"><i data-lucide="globe" class="w-4 h-4 text-gold-400"></i> https://binakerta.or.id</li>
+                        <li class="flex items-center gap-2"><i data-lucide="mail" class="w-4 h-4 text-gold-400"></i> info@binakerta.or.id</li>
+                        <li class="flex items-center gap-2"><i data-lucide="phone" class="w-4 h-4 text-gold-400"></i> (021) 7890-1234 / 0812-3456-7890</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="pt-8 border-t border-white/10 text-center text-xs text-gray-400">
+                &copy; 2026 Yayasan Bina Kerta Utama (binakerta.or.id). All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Data Element Logo Descriptions
+        const logoData = {
+            book: {
+                tag: "Pilar 1: Pendidikan",
+                title: "Buku Terbuka (Pendidikan & Karakter)",
+                body: "Melambangkan komitmen utama Yayasan Bina Kerta Utama dalam mengelola unit pendidikan PAUD & TK Bina Harapan I - IV. Buku yang terbuka melambangkan jendela ilmu pengetahuan, pembentukan karakter islami/nasionalis, serta semangat belajar sepanjang hayat.",
+                value: "Cerdas, Berkarakter & Intelektual",
+                icon: "book-open"
+            },
+            hands: {
+                tag: "Pilar 2: Sosial & Hukum",
+                title: "Tangan Pengasuh (Pengayoman & KBH)",
+                body: "Dua telapak tangan emas yang menopang menyimbolkan pengayoman sosial dan layanan bantuan hukum gratis (KBH). Yayasan siap merangkul, melindungi, dan membantu masyarakat miskin serta kaum dhuafa.",
+                value: "Kasih Sayang, Keadilan & Empati",
+                icon: "heart-handshake"
+            },
+            sprout: {
+                tag: "Pilar 3: Pertumbuhan",
+                title: "Tunas Hijau (Generasi Muda)",
+                body: "Tunas tanaman hijau yang bertumbuh tegak melambangkan benih potensi para santri/siswa yang sedang berkembang pesat. Warna hijau melambangkan kehidupan yang harmonis, kesegaran, dan kepedulian lingkungan.",
+                value: "Pertumbuhan & Keberlanjutan",
+                icon: "sprout"
+            },
+            sun: {
+                tag: "Pilar 4: Masa Depan",
+                title: "Matahari Terbit (Pencerahan)",
+                body: "Pancaran sinar matahari terbit dari balik buku melambangkan harapan masa depan yang cerah, mengikis kegelapan kebodohan, serta membawa kehangatan pencerahan bagi nusa dan bangsa.",
+                value: "Optimisme & Pencerahan Masa Depan",
+                icon: "sun"
+            },
+            ring: {
+                tag: "Pilar 5: Kelembagaan",
+                title: "Lingkaran Segel (Legalitas & Kesatuan)",
+                body: "Bentuk stempel/emblem ganda melingkar sempurna menegaskan legaliasi sah yayasan di bawah SK Kemenkumham AHU-0012498.AH.01.04 serta persatuan utuh seluruh organ pengurus.",
+                value: "Integritas, Legalitas & Persatuan",
+                icon: "shield"
+            }
+        };
+
+        // Initialize Lucide Icons
+        document.addEventListener("DOMContentLoaded", () => {
+            lucide.createIcons();
+            selectElement('book'); // Set default inspection view
+        });
+
+        // Toggle Mobile Menu Drawer
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobileMenu');
+            menu.classList.toggle('hidden');
+        }
+
+        // Interactive Logo Element Inspector Switcher
+        function selectElement(key) {
+            const data = logoData[key];
+            if (!data) return;
+
+            // Highlight target element visual effect
+            const svgG = document.querySelectorAll('#mainLogoSvg g, #mainLogoSvg circle');
+            svgG.forEach(el => el.style.opacity = "0.5");
+
+            const activeEl = document.getElementById(`el-${key}`);
+            if (activeEl) {
+                activeEl.style.opacity = "1";
+                activeEl.style.filter = "drop-shadow(0px 0px 8px rgba(212, 175, 55, 0.8))";
+                setTimeout(() => {
+                    activeEl.style.filter = "none";
+                }, 1200);
+            }
+
+            // Update Card Content
+            document.getElementById('inspectorTag').textContent = data.tag;
+            document.getElementById('inspectorTitle').textContent = data.title;
+            document.getElementById('inspectorBody').textContent = data.body;
+            document.getElementById('inspectorValue').textContent = data.value;
+
+            // Update Lucide Icon in Inspector Card
+            const iconBox = document.getElementById('inspectorIcon');
+            iconBox.innerHTML = `<i data-lucide="${data.icon}" class="w-5 h-5"></i>`;
+            lucide.createIcons();
+        }
+
+        // Notification Toast Display
+        function showToast(title, message) {
+            const toast = document.getElementById('toastNotification');
+            document.getElementById('toastTitle').textContent = title;
+            document.getElementById('toastMessage').textContent = message;
+
+            toast.classList.remove('hidden');
+            setTimeout(() => {
+                toast.classList.add('hidden');
+            }, 4000);
+        }
+
+        // Download SVG helper
+        function downloadSvgLogo() {
+            const svgData = document.getElementById('mainLogoSvg').outerHTML;
+            const blob = new Blob([svgData], { type: "image/svg+xml;charset=utf-8" });
+            const url = URL.createObjectURL(blob);
+            const downloadLink = document.createElement("a");
+            downloadLink.href = url;
+            downloadLink.download = "Logo-Yayasan-Bina-Kerta-Utama.svg";
+            document.body.appendChild(downloadLink);
+            downloadLink.click();
+            document.body.removeChild(downloadLink);
+
+            showToast('Download Berhasil!', 'File SVG Logo Yayasan Bina Kerta Utama tersimpan di perangkat Anda.');
+        }
+    </script>
+</body>
+</html>

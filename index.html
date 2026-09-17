@@ -1,0 +1,819 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yayasan Bina Kerta Utama | Menumbuhkan Harapan, Membina Masa Depan</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        navy: {
+                            800: '#0F2C59',
+                            900: '#0A1E3F',
+                            700: '#183D75',
+                        },
+                        gold: {
+                            400: '#F4C430',
+                            500: '#D4AF37',
+                            600: '#AA8929',
+                        },
+                        emerald: {
+                            600: '#2D7A54',
+                            700: '#1E583B',
+                        },
+                        cream: '#FDFBF7'
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        heading: ['Poppins', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        html { scroll-behavior: smooth; }
+        .bg-pattern {
+            background-image: radial-gradient(#D4AF37 0.75px, transparent 0.75px), radial-gradient(#D4AF37 0.75px, #FDFBF7 0.75px);
+            background-size: 30px 30px;
+            background-position: 0 0, 15px 15px;
+            opacity: 0.25;
+        }
+        .logo-shadow {
+            filter: drop-shadow(0px 4px 10px rgba(15, 44, 89, 0.15));
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800 font-sans antialiased flex flex-col min-h-screen">
+
+    <header class="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-gray-100 shadow-sm transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo & Brand Name -->
+                <div class="flex items-center gap-3 cursor-pointer" onclick="navigateTo('landing')">
+                    <!-- SVG Emblem Logo Code -->
+                    <svg class="w-12 h-12 logo-shadow" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="100" cy="100" r="94" stroke="#0F2C59" stroke-width="8" fill="#FFFFFF"/>
+                        <circle cx="100" cy="100" r="84" stroke="#D4AF37" stroke-width="3" fill="none"/>
+                        <!-- Sun Rays -->
+                        <g stroke="#D4AF37" stroke-width="4" stroke-linecap="round">
+                            <line x1="100" y1="35" x2="100" y2="22"/>
+                            <line x1="75" y1="42" x2="67" y2="30"/>
+                            <line x1="125" y1="42" x2="133" y2="30"/>
+                            <line x1="55" y1="58" x2="44" y2="49"/>
+                            <line x1="145" y1="58" x2="156" y2="49"/>
+                        </g>
+                        <!-- Sun Disk -->
+                        <path d="M70 70 A35 35 0 0 1 130 70 Z" fill="#F4C430"/>
+                        <!-- Book -->
+                        <path d="M100 85 L145 72 V115 L100 128 Z" fill="#0F2C59"/>
+                        <path d="M100 85 L55 72 V115 L100 128 Z" fill="#183D75"/>
+                        <path d="M100 88 L142 75 V112 L100 125 Z" fill="#D4AF37" opacity="0.3"/>
+                        <path d="M100 85 L100 128" stroke="#D4AF37" stroke-width="3"/>
+                        <!-- Hands -->
+                        <path d="M45 140 C55 125, 80 135, 95 148 C80 155, 60 160, 45 140 Z" fill="#D4AF37"/>
+                        <path d="M155 140 C145 125, 120 135, 105 148 C120 155, 140 160, 155 140 Z" fill="#D4AF37"/>
+                        <!-- Sprout Leaf -->
+                        <path d="M100 142 C92 125, 75 125, 82 110 C98 115, 100 132, 100 142 Z" fill="#2D7A54"/>
+                        <path d="M100 142 C108 125, 125 125, 118 110 C102 115, 100 132, 100 142 Z" fill="#2D7A54"/>
+                    </svg>
+                    <div>
+                        <span class="block font-heading font-extrabold text-lg sm:text-xl text-navy-800 leading-tight tracking-tight">YAYASAN BINA KERTA UTAMA</span>
+                        <span class="block text-xs font-medium text-gold-600 tracking-wider">SK KEMENKUMHAM AHU-0012498.AH.01.04</span>
+                    </div>
+                </div>
+
+                <!-- Desktop Navigation Links -->
+                <nav class="hidden lg:flex items-center gap-6 font-medium text-sm text-gray-700">
+                    <button onclick="navigateTo('landing')" class="nav-btn hover:text-navy-800 transition-colors py-2 px-1">Beranda</button>
+                    <button onclick="navigateTo('profil')" class="nav-btn hover:text-navy-800 transition-colors py-2 px-1">Profil & Legalitas</button>
+                    <button onclick="navigateTo('pendidikan')" class="nav-btn hover:text-navy-800 transition-colors py-2 px-1">TK Bina Harapan</button>
+                    <button onclick="navigateTo('sosial')" class="nav-btn hover:text-navy-800 transition-colors py-2 px-1">Sosial & Hukum (KBH)</button>
+                    <button onclick="openModal('ppdbModal')" class="bg-navy-800 text-white hover:bg-navy-700 px-5 py-2.5 rounded-full shadow-md transition-all text-xs font-semibold tracking-wide flex items-center gap-2">
+                        <i data-lucide="user-plus" class="w-4 h-4 text-gold-400"></i> PPDB Online
+                    </button>
+                </nav>
+
+                <!-- Mobile Hamburger Button -->
+                <button onclick="toggleMobileMenu()" class="lg:hidden p-2 rounded-lg text-navy-800 hover:bg-gray-100 focus:outline-none">
+                    <i data-lucide="menu" class="w-7 h-7"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Drawer -->
+        <div id="mobileMenu" class="hidden lg:hidden border-t border-gray-100 bg-white px-4 pt-3 pb-6 space-y-3 shadow-lg">
+            <button onclick="navigateTo('landing')" class="block w-full text-left py-2 font-medium text-navy-800 hover:bg-gray-50 rounded px-2">Beranda</button>
+            <button onclick="navigateTo('profil')" class="block w-full text-left py-2 font-medium text-navy-800 hover:bg-gray-50 rounded px-2">Profil & Legalitas Yayasan</button>
+            <button onclick="navigateTo('pendidikan')" class="block w-full text-left py-2 font-medium text-navy-800 hover:bg-gray-50 rounded px-2">Unit Pendidikan (TK)</button>
+            <button onclick="navigateTo('sosial')" class="block w-full text-left py-2 font-medium text-navy-800 hover:bg-gray-50 rounded px-2">Program Sosial & Bantuan Hukum</button>
+            <button onclick="openModal('ppdbModal'); toggleMobileMenu()" class="w-full mt-2 bg-navy-800 text-white text-center py-3 rounded-xl font-semibold flex justify-center items-center gap-2">
+                <i data-lucide="user-plus" class="w-4 h-4 text-gold-400"></i> Pendaftaran PPDB Online
+            </button>
+        </div>
+    </header>
+
+    <!-- MAIN DYNAMIC CONTENT CONTAINER -->
+    <main class="flex-grow">
+        
+        <!-- ========================================================================= -->
+        <!-- VIEW 1: MAIN LANDING PAGE -->
+        <!-- ========================================================================= -->
+        <div id="view-landing" class="view-page">
+            
+            <!-- Hero Section -->
+            <section class="relative bg-gradient-to-br from-navy-900 via-navy-800 to-navy-700 text-white overflow-hidden py-16 lg:py-24">
+                <div class="absolute inset-0 bg-pattern opacity-10"></div>
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+                    <div class="grid lg:grid-cols-12 gap-12 items-center">
+                        <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+                            <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 text-gold-400 backdrop-blur-md text-xs sm:text-sm font-medium border border-white/20">
+                                <i data-lucide="shield-check" class="w-4 h-4"></i> Official Foundation Website | binakerta.or.id
+                            </div>
+                            <h1 class="font-heading font-extrabold text-3xl sm:text-5xl lg:text-6xl text-white leading-tight">
+                                Menumbuhkan Harapan, <span class="text-gold-400 underline stroke-gold-500">Membina Masa Depan</span>
+                            </h1>
+                            <p class="text-gray-200 text-base sm:text-lg max-w-2xl leading-relaxed">
+                                Yayasan Bina Kerta Utama hadir mewujudkan generasi cerdas, berkarakter, dan terlindungi melalui layanan pendidikan usia dini (TK Bina Harapan), bantuan hukum gratis (KBH), serta kepedulian sosial kemasyarakatan.
+                            </p>
+                            <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start pt-4">
+                                <button onclick="navigateTo('pendidikan')" class="bg-gold-500 hover:bg-gold-600 text-navy-900 px-8 py-4 rounded-xl font-bold text-sm shadow-lg hover:shadow-xl transition-all flex items-center justify-center gap-2">
+                                    <i data-lucide="graduation-cap" class="w-5 h-5"></i> Jelajahi TK Bina Harapan
+                                </button>
+                                <button onclick="navigateTo('sosial')" class="border border-white/30 hover:bg-white/10 text-white px-8 py-4 rounded-xl font-medium text-sm transition-all flex items-center justify-center gap-2">
+                                    <i data-lucide="scale" class="w-5 h-5 text-gold-400"></i> Konsultasi Hukum KBH
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="lg:col-span-5 flex justify-center">
+                            <div class="relative w-full max-w-md bg-white/5 backdrop-blur-lg border border-white/10 rounded-3xl p-8 shadow-2xl text-center">
+                                <div class="w-32 h-32 mx-auto mb-6 bg-white rounded-full p-2 shadow-inner flex items-center justify-center">
+                                    <svg class="w-full h-full" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <circle cx="100" cy="100" r="94" stroke="#0F2C59" stroke-width="8" fill="#FFFFFF"/>
+                                        <circle cx="100" cy="100" r="84" stroke="#D4AF37" stroke-width="3" fill="none"/>
+                                        <g stroke="#D4AF37" stroke-width="4" stroke-linecap="round">
+                                            <line x1="100" y1="35" x2="100" y2="22"/>
+                                            <line x1="75" y1="42" x2="67" y2="30"/>
+                                            <line x1="125" y1="42" x2="133" y2="30"/>
+                                        </g>
+                                        <path d="M70 70 A35 35 0 0 1 130 70 Z" fill="#F4C430"/>
+                                        <path d="M100 85 L145 72 V115 L100 128 Z" fill="#0F2C59"/>
+                                        <path d="M100 85 L55 72 V115 L100 128 Z" fill="#183D75"/>
+                                        <path d="M100 85 L100 128" stroke="#D4AF37" stroke-width="3"/>
+                                        <path d="M45 140 C55 125, 80 135, 95 148 C80 155, 60 160, 45 140 Z" fill="#D4AF37"/>
+                                        <path d="M155 140 C145 125, 120 135, 105 148 C120 155, 140 160, 155 140 Z" fill="#D4AF37"/>
+                                        <path d="M100 142 C92 125, 75 125, 82 110 C98 115, 100 132, 100 142 Z" fill="#2D7A54"/>
+                                        <path d="M100 142 C108 125, 125 125, 118 110 C102 115, 100 132, 100 142 Z" fill="#2D7A54"/>
+                                    </svg>
+                                </div>
+                                <h3 class="font-heading font-bold text-xl text-white">Yayasan Bina Kerta Utama</h3>
+                                <p class="text-xs text-gold-400 mt-1 uppercase tracking-widest font-semibold">Legal & Terakreditasi</p>
+                                <div class="mt-6 pt-6 border-t border-white/10 grid grid-cols-3 gap-2 text-center text-xs">
+                                    <div class="p-2 rounded bg-white/5">
+                                        <div class="font-bold text-base text-gold-400">4</div>
+                                        <div class="text-gray-300">Unit TK</div>
+                                    </div>
+                                    <div class="p-2 rounded bg-white/5">
+                                        <div class="font-bold text-base text-gold-400">1.200+</div>
+                                        <div class="text-gray-300">Alumni</div>
+                                    </div>
+                                    <div class="p-2 rounded bg-white/5">
+                                        <div class="font-bold text-base text-gold-400">100%</div>
+                                        <div class="text-gray-300">Dedikasi</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 3 Pillars Section -->
+            <section class="py-16 bg-white">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <div class="text-center max-w-3xl mx-auto mb-16">
+                        <h2 class="text-xs font-bold tracking-widest text-gold-600 uppercase">Pilar Utama Kegiatan</h2>
+                        <h3 class="font-heading font-bold text-3xl sm:text-4xl text-navy-900 mt-2">Mengabdi untuk Masyarakat & Pendidikan</h3>
+                    </div>
+
+                    <div class="grid md:grid-cols-3 gap-8">
+                        <!-- Pillar 1 -->
+                        <div class="bg-gray-50 rounded-2xl p-8 border border-gray-100 hover:shadow-xl transition-all duration-300 group">
+                            <div class="w-14 h-14 bg-navy-800 text-gold-400 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-gold-500 group-hover:text-navy-900 transition-colors">
+                                <i data-lucide="book-open" class="w-7 h-7"></i>
+                            </div>
+                            <h4 class="font-heading font-bold text-xl text-navy-800 mb-3">Pendidikan PAUD & TK</h4>
+                            <p class="text-gray-600 text-sm leading-relaxed mb-6">
+                                Pengelolaan Taman Kanak-Kanak Bina Harapan I - IV dengan kurikulum terpadu berkarakter Islami & Nasionalis.
+                            </p>
+                            <button onclick="navigateTo('pendidikan')" class="text-navy-800 font-semibold text-sm inline-flex items-center gap-2 group-hover:text-gold-600">
+                                Detail Unit TK <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                            </button>
+                        </div>
+
+                        <!-- Pillar 2 -->
+                        <div class="bg-gray-50 rounded-2xl p-8 border border-gray-100 hover:shadow-xl transition-all duration-300 group">
+                            <div class="w-14 h-14 bg-emerald-600 text-white rounded-2xl flex items-center justify-center mb-6 group-hover:bg-navy-800 transition-colors">
+                                <i data-lucide="heart" class="w-7 h-7"></i>
+                            </div>
+                            <h4 class="font-heading font-bold text-xl text-navy-800 mb-3">Kegiatan Sosial & Santunan</h4>
+                            <p class="text-gray-600 text-sm leading-relaxed mb-6">
+                                Program rutin santunan anak yatim, bantuan sembako dhuafa, serta pelatihan keterampilan kerja bagi warga sekitar.
+                            </p>
+                            <button onclick="navigateTo('sosial')" class="text-emerald-600 font-semibold text-sm inline-flex items-center gap-2 group-hover:text-navy-800">
+                                Program Sosial <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                            </button>
+                        </div>
+
+                        <!-- Pillar 3 -->
+                        <div class="bg-gray-50 rounded-2xl p-8 border border-gray-100 hover:shadow-xl transition-all duration-300 group">
+                            <div class="w-14 h-14 bg-gold-500 text-navy-900 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-emerald-600 group-hover:text-white transition-colors">
+                                <i data-lucide="scale" class="w-7 h-7"></i>
+                            </div>
+                            <h4 class="font-heading font-bold text-xl text-navy-800 mb-3">Kantor Bantuan Hukum (KBH)</h4>
+                            <p class="text-gray-600 text-sm leading-relaxed mb-6">
+                                Layanan konsultasi dan advokasi hukum gratis bagi masyarakat kurang mampu yang membutuhkan perlindungan hukum.
+                            </p>
+                            <button onclick="navigateTo('sosial')" class="text-gold-600 font-semibold text-sm inline-flex items-center gap-2 group-hover:text-navy-800">
+                                Layanan Hukum <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Call to Action Banner -->
+            <section class="bg-navy-800 text-white py-14">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center sm:text-left flex flex-col sm:flex-row items-center justify-between gap-6">
+                    <div>
+                        <h3 class="font-heading font-bold text-2xl sm:text-3xl text-white">Pendaftaran Siswa Baru (PPDB) T.A 2026/2027</h3>
+                        <p class="text-gray-300 text-sm mt-1">Daftarkan putra-putri Anda di TK Bina Harapan I, II, III, atau IV secara online.</p>
+                    </div>
+                    <button onclick="openModal('ppdbModal')" class="bg-gold-500 hover:bg-gold-600 text-navy-900 font-bold px-7 py-3.5 rounded-xl transition-all text-sm whitespace-nowrap shadow-md">
+                        Daftar PPDB Sekarang
+                    </button>
+                </div>
+            </section>
+        </div>
+
+        <!-- ========================================================================= -->
+        <!-- VIEW 2: DEEP PAGE 1 - PROFIL & LEGALITAS YAYASAN -->
+        <!-- ========================================================================= -->
+        <div id="view-profil" class="view-page hidden">
+            <!-- Header Banner -->
+            <div class="bg-navy-900 text-white py-12 border-b border-gold-500/30">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <span class="text-gold-400 font-medium text-xs uppercase tracking-wider">Informasi Kelembagaan</span>
+                    <h1 class="font-heading font-bold text-3xl sm:text-4xl text-white mt-1">Profil & Legalitas Yayasan</h1>
+                    <p class="text-gray-300 text-sm mt-2 max-w-2xl">Landasan hukum, struktur kepengurusan, serta prinsip Anggaran Dasar / Anggaran Rumah Tangga (AD/ART) Yayasan Bina Kerta Utama.</p>
+                </div>
+            </div>
+
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 space-y-12">
+                <!-- Sejarah & Visi Misi -->
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div class="bg-white p-8 rounded-2xl border border-gray-200 shadow-sm">
+                        <div class="flex items-center gap-3 mb-4">
+                            <i data-lucide="compass" class="w-6 h-6 text-gold-500"></i>
+                            <h2 class="font-heading font-bold text-xl text-navy-800">Visi & Misi</h2>
+                        </div>
+                        <div class="space-y-4 text-sm text-gray-700">
+                            <div class="bg-amber-50/50 p-4 rounded-xl border border-gold-400/20">
+                                <h3 class="font-bold text-navy-900 mb-1">VISI:</h3>
+                                <p class="italic">"Menjadi lembaga pembina masyarakat yang unggul dalam mencerdaskan generasi bangsa dan memberdayakan kesejahteraan sosial berdasarkan nilai keadilan."</p>
+                            </div>
+                            <div>
+                                <h3 class="font-bold text-navy-900 mb-2">MISI KAMI:</h3>
+                                <ul class="list-disc list-inside space-y-1.5 text-gray-600">
+                                    <li>Menyelenggarakan pendidikan anak usia dini berkualitas dan terjangkau.</li>
+                                    <li>Memberikan bantuan dan advokasi hukum gratis bagi warga kurang mampu.</li>
+                                    <li>Menggalang kepedulian sosial melalui santunan dan pelatihan kemasyarakatan.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Legalitas Dokumen -->
+                    <div class="bg-white p-8 rounded-2xl border border-gray-200 shadow-sm">
+                        <div class="flex items-center gap-3 mb-4">
+                            <i data-lucide="file-badge" class="w-6 h-6 text-emerald-600"></i>
+                            <h2 class="font-heading font-bold text-xl text-navy-800">Legalitas & SK Badan Hukum</h2>
+                        </div>
+                        <div class="space-y-3 text-sm">
+                            <div class="flex justify-between py-2 border-b border-gray-100">
+                                <span class="text-gray-500">Nama Resmi:</span>
+                                <span class="font-semibold text-navy-900">Yayasan Bina Kerta Utama</span>
+                            </div>
+                            <div class="flex justify-between py-2 border-b border-gray-100">
+                                <span class="text-gray-500">SK Kemenkumham:</span>
+                                <span class="font-semibold text-navy-900">AHU-0012498.AH.01.04</span>
+                            </div>
+                            <div class="flex justify-between py-2 border-b border-gray-100">
+                                <span class="text-gray-500">Akta Pendirian Notaris:</span>
+                                <span class="font-semibold text-navy-900">No. 14 / Tahun 2012</span>
+                            </div>
+                            <div class="flex justify-between py-2 border-b border-gray-100">
+                                <span class="text-gray-500">NPWP Yayasan:</span>
+                                <span class="font-semibold text-navy-900">31.482.910.4-412.000</span>
+                            </div>
+                            <div class="flex justify-between py-2 border-b border-gray-100">
+                                <span class="text-gray-500">Domain Resmi:</span>
+                                <span class="font-semibold text-emerald-600">binakerta.or.id</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- AD / ART Overview Accordion / Details -->
+                <div class="bg-white p-8 rounded-2xl border border-gray-200 shadow-sm">
+                    <h2 class="font-heading font-bold text-xl text-navy-800 mb-4 flex items-center gap-2">
+                        <i data-lucide="book" class="w-5 h-5 text-gold-500"></i> Ringkasan Ketentuan AD / ART Yayasan
+                    </h2>
+                    <p class="text-sm text-gray-600 mb-6">Sesuai dengan Anggaran Dasar & Anggaran Rumah Tangga yang disahkan dalam Musyawarah Organisasi dan Akta Notaris:</p>
+                    
+                    <div class="grid md:grid-cols-3 gap-6 text-sm">
+                        <div class="p-4 bg-gray-50 rounded-xl border border-gray-100">
+                            <h3 class="font-bold text-navy-800 mb-2">Pasal 4: Asas & Sifat</h3>
+                            <p class="text-gray-600">Yayasan bersifat nirlaba, independen, berpancasila, dan berdedikasi penuh untuk kemanusiaan, pendidikan, serta sosial.</p>
+                        </div>
+                        <div class="p-4 bg-gray-50 rounded-xl border border-gray-100">
+                            <h3 class="font-bold text-navy-800 mb-2">Pasal 12: Pengurusan</h3>
+                            <p class="text-gray-600">Organ terdiri dari Pembina, Pengurus Harian (Ketua, Sekretaris, Bendahara), dan Pengawas yang dipilih tiap periode 5 tahun.</p>
+                        </div>
+                        <div class="p-4 bg-gray-50 rounded-xl border border-gray-100">
+                            <h3 class="font-bold text-navy-800 mb-2">Pasal 20: Keuangan</h3>
+                            <p class="text-gray-600">Sumber dana berasal dari sumbangan tidak mengikat, donasi donatur, hasil usaha mandiri unit pendidikan, dan bantuan pemerintah.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ========================================================================= -->
+        <!-- VIEW 3: DEEP PAGE 2 - UNIT PENDIDIKAN (TK BINA HARAPAN I - IV) -->
+        <!-- ========================================================================= -->
+        <div id="view-pendidikan" class="view-page hidden">
+            <!-- Header Banner -->
+            <div class="bg-navy-800 text-white py-12 border-b border-gold-500/30">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <span class="text-gold-400 font-medium text-xs uppercase tracking-wider">Unit Layanan Pendidikan</span>
+                    <h1 class="font-heading font-bold text-3xl sm:text-4xl text-white mt-1">TK Bina Harapan I, II, III, & IV</h1>
+                    <p class="text-gray-300 text-sm mt-2 max-w-2xl">Membentuk karakter islami, cerdas, kreatif, dan siap bersaing sejak usia dini.</p>
+                </div>
+            </div>
+
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 space-y-12">
+                <!-- Campus Selector Tabs -->
+                <div>
+                    <div class="flex justify-between items-center mb-6">
+                        <h2 class="font-heading font-bold text-2xl text-navy-900">Pilih Lokasi Kampus TK</h2>
+                        <button onclick="openModal('ppdbModal')" class="bg-emerald-600 hover:bg-emerald-700 text-white text-xs px-4 py-2.5 rounded-lg font-semibold flex items-center gap-1.5">
+                            <i data-lucide="user-plus" class="w-4 h-4"></i> Daftar PPDB Online
+                        </button>
+                    </div>
+
+                    <!-- Filter Buttons -->
+                    <div class="flex flex-wrap gap-2 mb-8">
+                        <button onclick="filterCampus('tk1')" id="tab-tk1" class="campus-tab px-5 py-2.5 rounded-xl font-medium text-sm border bg-navy-800 text-white border-navy-800 transition-all">TK Bina Harapan I</button>
+                        <button onclick="filterCampus('tk2')" id="tab-tk2" class="campus-tab px-5 py-2.5 rounded-xl font-medium text-sm border bg-white text-gray-700 border-gray-200 hover:bg-gray-100 transition-all">TK Bina Harapan II</button>
+                        <button onclick="filterCampus('tk3')" id="tab-tk3" class="campus-tab px-5 py-2.5 rounded-xl font-medium text-sm border bg-white text-gray-700 border-gray-200 hover:bg-gray-100 transition-all">TK Bina Harapan III</button>
+                        <button onclick="filterCampus('tk4')" id="tab-tk4" class="campus-tab px-5 py-2.5 rounded-xl font-medium text-sm border bg-white text-gray-700 border-gray-200 hover:bg-gray-100 transition-all">TK Bina Harapan IV</button>
+                    </div>
+
+                    <!-- Campus Details Cards (Dynamic Filter Display) -->
+                    <div id="campus-details" class="bg-white rounded-2xl border border-gray-200 p-8 shadow-sm">
+                        <!-- Dynamic Content injected via JS -->
+                    </div>
+                </div>
+
+                <!-- Program Kurikulum & Fasilitas -->
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div class="bg-white p-8 rounded-2xl border border-gray-200 shadow-sm">
+                        <h3 class="font-heading font-bold text-xl text-navy-800 mb-4 flex items-center gap-2">
+                            <i data-lucide="book-open" class="w-5 h-5 text-gold-500"></i> Kurikulum Unggulan
+                        </h3>
+                        <ul class="space-y-3 text-sm text-gray-700">
+                            <li class="flex items-start gap-3">
+                                <i data-lucide="check-circle" class="w-5 h-5 text-emerald-600 flex-shrink-0 mt-0.5"></i>
+                                <span><strong>Kurikulum Merdeka PAUD:</strong> Pembelajaran berbasis proyek (Project Based Learning) merangsang kognitif anak.</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <i data-lucide="check-circle" class="w-5 h-5 text-emerald-600 flex-shrink-0 mt-0.5"></i>
+                                <span><strong>Pendidikan Karakter & Agama:</strong> Tahfiz Juz Amma, Doa Harian, Praktek Sholat, & Sopan Santun.</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <i data-lucide="check-circle" class="w-5 h-5 text-emerald-600 flex-shrink-0 mt-0.5"></i>
+                                <span><strong>Calistung Fun Method:</strong> Pengenalan membaca, menulis, dan berhitung tanpa paksaan.</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="bg-white p-8 rounded-2xl border border-gray-200 shadow-sm">
+                        <h3 class="font-heading font-bold text-xl text-navy-800 mb-4 flex items-center gap-2">
+                            <i data-lucide="smile" class="w-5 h-5 text-gold-500"></i> Ekstrakurikuler
+                        </h3>
+                        <div class="grid grid-cols-2 gap-4 text-sm text-gray-700">
+                            <div class="p-3 bg-gray-50 rounded-xl flex items-center gap-2">
+                                <i data-lucide="palette" class="w-4 h-4 text-navy-800"></i> Seni Lukis & Mewarnai
+                            </div>
+                            <div class="p-3 bg-gray-50 rounded-xl flex items-center gap-2">
+                                <i data-lucide="music" class="w-4 h-4 text-navy-800"></i> Angklung & Seni Musik
+                            </div>
+                            <div class="p-3 bg-gray-50 rounded-xl flex items-center gap-2">
+                                <i data-lucide="languages" class="w-4 h-4 text-navy-800"></i> English for Kids
+                            </div>
+                            <div class="p-3 bg-gray-50 rounded-xl flex items-center gap-2">
+                                <i data-lucide="activity" class="w-4 h-4 text-navy-800"></i> Menari & Olahraga
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ========================================================================= -->
+        <!-- VIEW 4: DEEP PAGE 3 - PROGRAM SOSIAL & KANTOR BANTUAN HUKUM (KBH) -->
+        <!-- ========================================================================= -->
+        <div id="view-sosial" class="view-page hidden">
+            <!-- Header Banner -->
+            <div class="bg-navy-900 text-white py-12 border-b border-gold-500/30">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <span class="text-gold-400 font-medium text-xs uppercase tracking-wider">Layanan Kemanusiaan</span>
+                    <h1 class="font-heading font-bold text-3xl sm:text-4xl text-white mt-1">Program Sosial & Kantor Bantuan Hukum (KBH)</h1>
+                    <p class="text-gray-300 text-sm mt-2 max-w-2xl">Mewujudkan keadilan sosial dan perlindungan hukum bagi masyarakat miskin serta marginal.</p>
+                </div>
+            </div>
+
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 space-y-12">
+                <!-- Section KBH Legal Aid Services -->
+                <div class="grid lg:grid-cols-12 gap-8 items-start">
+                    <div class="lg:col-span-7 bg-white p-8 rounded-2xl border border-gray-200 shadow-sm space-y-6">
+                        <div class="flex items-center gap-3">
+                            <div class="w-12 h-12 bg-navy-800 text-gold-400 rounded-xl flex items-center justify-center font-bold">
+                                <i data-lucide="scale" class="w-6 h-6"></i>
+                            </div>
+                            <div>
+                                <h2 class="font-heading font-bold text-2xl text-navy-900">Kantor Bantuan Hukum (KBH) Bina Kerta Utama</h2>
+                                <p class="text-xs text-emerald-600 font-medium">Layanan Advokasi Pro-Bono (Gratis untuk Kurang Mampu)</p>
+                            </div>
+                        </div>
+
+                        <p class="text-sm text-gray-700 leading-relaxed">
+                            KBH Bina Kerta Utama dibentuk sebagai bentuk wujud pengabdian sosial yayasan dalam memberikan konsultasi, pendampingan, dan bantuan hukum kepada masyarakat yang tidak mampu secara finansial.
+                        </p>
+
+                        <div class="grid sm:grid-cols-2 gap-4 text-sm">
+                            <div class="p-4 border border-gray-100 bg-gray-50 rounded-xl">
+                                <h4 class="font-bold text-navy-800 mb-1">Konsultasi Hukum Perdata</h4>
+                                <p class="text-xs text-gray-600">Sengketa tanah/waris, perikatan, kewarisan, dan hukum keluarga.</p>
+                            </div>
+                            <div class="p-4 border border-gray-100 bg-gray-50 rounded-xl">
+                                <h4 class="font-bold text-navy-800 mb-1">Pendampingan Pidana</h4>
+                                <p class="text-xs text-gray-600">Bantuan hukum bagi korban atau terdakwa tidak mampu.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- KBH Appointment Form -->
+                    <div class="lg:col-span-5 bg-white p-6 sm:p-8 rounded-2xl border border-gray-200 shadow-lg">
+                        <h3 class="font-heading font-bold text-xl text-navy-800 mb-2">Formulir Konsultasi KBH</h3>
+                        <p class="text-xs text-gray-500 mb-6">Jadwalkan sesi konsultasi dengan tim advokat yayasan.</p>
+
+                        <form id="kbhForm" onsubmit="handleKbhSubmit(event)" class="space-y-4">
+                            <div>
+                                <label class="block text-xs font-semibold text-gray-700 mb-1">Nama Lengkap *</label>
+                                <input type="text" required class="w-full px-4 py-2.5 rounded-xl border border-gray-300 text-sm focus:ring-2 focus:ring-navy-800 focus:outline-none" placeholder="Masukkan nama Anda">
+                            </div>
+                            <div>
+                                <label class="block text-xs font-semibold text-gray-700 mb-1">Nomor WhatsApp / HP *</label>
+                                <input type="tel" required class="w-full px-4 py-2.5 rounded-xl border border-gray-300 text-sm focus:ring-2 focus:ring-navy-800 focus:outline-none" placeholder="08xxxxxxxxxx">
+                            </div>
+                            <div>
+                                <label class="block text-xs font-semibold text-gray-700 mb-1">Kategori Masalah Hukum *</label>
+                                <select required class="w-full px-4 py-2.5 rounded-xl border border-gray-300 text-sm focus:ring-2 focus:ring-navy-800 focus:outline-none">
+                                    <option value="">-- Pilih Kategori --</option>
+                                    <option value="perdata">Hukum Perdata / Keluarga</option>
+                                    <option value="pidana">Hukum Pidana</option>
+                                    <option value="ketenagakerjaan">Ketenagakerjaan / Sengketa Kerja</option>
+                                    <option value="lainnya">Lain-lain</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label class="block text-xs font-semibold text-gray-700 mb-1">Uraian Singkat Permasalahan *</label>
+                                <textarea required rows="3" class="w-full px-4 py-2.5 rounded-xl border border-gray-300 text-sm focus:ring-2 focus:ring-navy-800 focus:outline-none" placeholder="Jelaskan secara singkat..."></textarea>
+                            </div>
+                            <button type="submit" class="w-full bg-navy-800 hover:bg-navy-900 text-white font-semibold py-3 rounded-xl transition-all text-sm shadow">
+                                Kirim Permohonan Konsultasi
+                            </button>
+                        </form>
+                    </div>
+                </div>
+
+                <!-- Charity & Community Social Work -->
+                <div class="bg-white p-8 rounded-2xl border border-gray-200 shadow-sm">
+                    <h2 class="font-heading font-bold text-xl text-navy-800 mb-6 flex items-center gap-2">
+                        <i data-lucide="heart-handshake" class="w-5 h-5 text-emerald-600"></i> Program Donor & Bakti Sosial Routine
+                    </h2>
+                    <div class="grid sm:grid-cols-3 gap-6">
+                        <div class="p-4 bg-emerald-50/50 rounded-xl border border-emerald-100">
+                            <h3 class="font-bold text-emerald-800 text-base mb-1">Santunan Yatim Piatu</h3>
+                            <p class="text-xs text-gray-600">Pemberian beasiswa pendidikan & santunan berkala untuk 150+ anak asuh binaan.</p>
+                        </div>
+                        <div class="p-4 bg-amber-50/50 rounded-xl border border-gold-400/20">
+                            <h3 class="font-bold text-navy-800 text-base mb-1">Sembako Murah / Gratis</h3>
+                            <p class="text-xs text-gray-600">Pembagian paket pangan bagi lansia dan kaum dhuafa di lingkungan sekitar yayasan.</p>
+                        </div>
+                        <div class="p-4 bg-blue-50/50 rounded-xl border border-blue-100">
+                            <h3 class="font-bold text-navy-800 text-base mb-1">Pelatihan Wirausaha</h3>
+                            <p class="text-xs text-gray-600">Workshop keterampilan usaha mikro bagi ibu-ibu rumah tangga produktif.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <div id="ppdbModal" class="fixed inset-0 bg-black/60 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4">
+        <div class="bg-white rounded-3xl max-w-lg w-full p-6 sm:p-8 shadow-2xl relative max-h-[90vh] overflow-y-auto">
+            <!-- Close Button -->
+            <button onclick="closeModal('ppdbModal')" class="absolute top-5 right-5 text-gray-400 hover:text-gray-700">
+                <i data-lucide="x" class="w-6 h-6"></i>
+            </button>
+
+            <div class="flex items-center gap-3 mb-4">
+                <div class="w-10 h-10 bg-gold-500 rounded-full flex items-center justify-center text-navy-900 font-bold">
+                    <i data-lucide="user-plus" class="w-5 h-5"></i>
+                </div>
+                <div>
+                    <h3 class="font-heading font-bold text-xl text-navy-900">Formulir PPDB Online</h3>
+                    <p class="text-xs text-gray-500">Pendaftaran TK Bina Harapan T.A 2026/2027</p>
+                </div>
+            </div>
+
+            <form id="ppdbForm" onsubmit="handlePpdbSubmit(event)" class="space-y-4">
+                <div>
+                    <label class="block text-xs font-semibold text-gray-700 mb-1">Pilih Unit TK Target *</label>
+                    <select required class="w-full px-4 py-2.5 rounded-xl border border-gray-300 text-sm focus:ring-2 focus:ring-navy-800 focus:outline-none">
+                        <option value="">-- Pilih Lokasi TK --</option>
+                        <option value="tk1">TK Bina Harapan I (Kampus Utama)</option>
+                        <option value="tk2">TK Bina Harapan II</option>
+                        <option value="tk3">TK Bina Harapan III</option>
+                        <option value="tk4">TK Bina Harapan IV</option>
+                    </select>
+                </div>
+                <div>
+                    <label class="block text-xs font-semibold text-gray-700 mb-1">Nama Lengkap Calon Siswa *</label>
+                    <input type="text" required class="w-full px-4 py-2.5 rounded-xl border border-gray-300 text-sm focus:ring-2 focus:ring-navy-800 focus:outline-none" placeholder="Nama anak">
+                </div>
+                <div class="grid grid-cols-2 gap-3">
+                    <div>
+                        <label class="block text-xs font-semibold text-gray-700 mb-1">Tempat Lahir *</label>
+                        <input type="text" required class="w-full px-4 py-2.5 rounded-xl border border-gray-300 text-sm focus:ring-2 focus:ring-navy-800 focus:outline-none">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-semibold text-gray-700 mb-1">Tanggal Lahir *</label>
+                        <input type="date" required class="w-full px-4 py-2.5 rounded-xl border border-gray-300 text-sm focus:ring-2 focus:ring-navy-800 focus:outline-none">
+                    </div>
+                </div>
+                <div>
+                    <label class="block text-xs font-semibold text-gray-700 mb-1">Nama Orang Tua / Wali *</label>
+                    <input type="text" required class="w-full px-4 py-2.5 rounded-xl border border-gray-300 text-sm focus:ring-2 focus:ring-navy-800 focus:outline-none" placeholder="Nama Ibu / Ayah">
+                </div>
+                <div>
+                    <label class="block text-xs font-semibold text-gray-700 mb-1">Nomor WhatsApp Aktif *</label>
+                    <input type="tel" required class="w-full px-4 py-2.5 rounded-xl border border-gray-300 text-sm focus:ring-2 focus:ring-navy-800 focus:outline-none" placeholder="08xxxxxxxxxx">
+                </div>
+                <button type="submit" class="w-full bg-navy-800 hover:bg-navy-900 text-white font-bold py-3.5 rounded-xl transition-all text-sm shadow-md mt-2">
+                    Kirim Formulir Pendaftaran
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Notification Toast -->
+    <div id="toastNotification" class="fixed bottom-6 right-6 z-50 hidden bg-navy-900 text-white px-6 py-4 rounded-2xl shadow-2xl border border-gold-500/40 flex items-center gap-3">
+        <i data-lucide="check-circle-2" class="w-6 h-6 text-emerald-400"></i>
+        <div>
+            <h5 id="toastTitle" class="font-bold text-sm">Pesan Terkirim</h5>
+            <p id="toastMessage" class="text-xs text-gray-300">Data Anda berhasil disimpan.</p>
+        </div>
+    </div>
+
+    <footer class="bg-navy-900 text-white border-t border-gold-500/20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+                <!-- Brand Info -->
+                <div class="md:col-span-2 space-y-4">
+                    <div class="flex items-center gap-3">
+                        <svg class="w-10 h-10" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="100" cy="100" r="94" stroke="#FFFFFF" stroke-width="8" fill="#0F2C59"/>
+                            <circle cx="100" cy="100" r="84" stroke="#D4AF37" stroke-width="3" fill="none"/>
+                            <path d="M70 70 A35 35 0 0 1 130 70 Z" fill="#F4C430"/>
+                            <path d="M100 85 L145 72 V115 L100 128 Z" fill="#FFFFFF"/>
+                            <path d="M100 85 L55 72 V115 L100 128 Z" fill="#D4AF37"/>
+                        </svg>
+                        <span class="font-heading font-extrabold text-lg text-white">YAYASAN BINA KERTA UTAMA</span>
+                    </div>
+                    <p class="text-gray-400 text-xs leading-relaxed max-w-md">
+                        Lembaga nirlaba pengelola unit pendidikan Taman Kanak-Kanak Bina Harapan serta penyelenggara kegiatan sosial kemasyarakatan dan bantuan hukum bagi masyarakat.
+                    </p>
+                    <div class="text-xs text-gold-400">
+                        SK KEMENKUMHAM: AHU-0012498.AH.01.04
+                    </div>
+                </div>
+
+                <!-- Navigation Links -->
+                <div>
+                    <h4 class="font-heading font-bold text-sm text-gold-400 mb-3">Tautan Cepat</h4>
+                    <ul class="space-y-2 text-xs text-gray-300">
+                        <li><button onclick="navigateTo('landing')" class="hover:text-white">Beranda Utama</button></li>
+                        <li><button onclick="navigateTo('profil')" class="hover:text-white">Profil & Legalitas</button></li>
+                        <li><button onclick="navigateTo('pendidikan')" class="hover:text-white">TK Bina Harapan I-IV</button></li>
+                        <li><button onclick="navigateTo('sosial')" class="hover:text-white">Bantuan Hukum (KBH)</button></li>
+                    </ul>
+                </div>
+
+                <!-- Contact Info -->
+                <div>
+                    <h4 class="font-heading font-bold text-sm text-gold-400 mb-3">Kontak Pusat</h4>
+                    <ul class="space-y-2 text-xs text-gray-300">
+                        <li class="flex items-center gap-2"><i data-lucide="globe" class="w-4 h-4 text-gold-400"></i> https://binakerta.or.id</li>
+                        <li class="flex items-center gap-2"><i data-lucide="mail" class="w-4 h-4 text-gold-400"></i> info@binakerta.or.id</li>
+                        <li class="flex items-center gap-2"><i data-lucide="phone" class="w-4 h-4 text-gold-400"></i> (021) 7890-1234 / 0812-3456-7890</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="pt-8 border-t border-white/10 text-center text-xs text-gray-400">
+                &copy; 2026 Yayasan Bina Kerta Utama (binakerta.or.id). All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Data Kampus TK Bina Harapan
+        const campusData = {
+            tk1: {
+                title: "TK Bina Harapan I (Kampus Pusat)",
+                address: "Jl. Utama Bina Kerta No. 12, Kompleks Bina Kerta Utama",
+                head: "Ibu Hj. Siti Rahmah, S.Pd.AUD",
+                accreditation: "Terakreditasi A (Unggul)",
+                facilities: ["Gedung 2 Lantai AC", "Taman Bermain Outdoor", "Laboratorium Komputer Anak", "Ruang Perpustakaan Mini"]
+            },
+            tk2: {
+                title: "TK Bina Harapan II",
+                address: "Jl. Melati Harapan Blok C No. 45",
+                head: "Ibu Nurhayati, S.Pd",
+                accreditation: "Terakreditasi A",
+                facilities: ["Ruang Kelas Interaktif", "Area Bermain Pasir & Air", "Ruang UPT UKS & Gizi", "Musala Anak"]
+            },
+            tk3: {
+                title: "TK Bina Harapan III",
+                address: "Jl. Raya Cendrawasih No. 88",
+                head: "Ibu Endang Sriwahyuni, M.Pd",
+                accreditation: "Terakreditasi B (Baik)",
+                facilities: ["Ruang Seni & Musik Angklung", "Halaman Olahraga Safe-Turf", "Kantin Sehat", "CCTV 24 Jam"]
+            },
+            tk4: {
+                title: "TK Bina Harapan IV",
+                address: "Jl. Kebon Asri No. 19",
+                head: "Ibu Rahmawati, S.Pd",
+                accreditation: "Terakreditasi A",
+                facilities: ["Taman Edukasi Tanaman", "Ruang Kelas AC & Smart TV", "Area Menari", "Perpustakaan Digital"]
+            }
+        };
+
+        // Initialize Lucide Icons
+        document.addEventListener("DOMContentLoaded", () => {
+            lucide.createIcons();
+            filterCampus('tk1'); // Render default campus
+        });
+
+        // SPA Navigation Router
+        function navigateTo(viewId) {
+            const views = document.querySelectorAll('.view-page');
+            views.forEach(view => view.classList.add('hidden'));
+
+            const targetView = document.getElementById(`view-${viewId}`);
+            if (targetView) {
+                targetView.classList.remove('hidden');
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            }
+
+            // Close mobile menu if open
+            const mobileMenu = document.getElementById('mobileMenu');
+            if (mobileMenu && !mobileMenu.classList.contains('hidden')) {
+                mobileMenu.classList.add('hidden');
+            }
+        }
+
+        // Toggle Mobile Menu
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobileMenu');
+            menu.classList.toggle('hidden');
+        }
+
+        // Modal Controls
+        function openModal(id) {
+            document.getElementById(id).classList.remove('hidden');
+        }
+
+        function closeModal(id) {
+            document.getElementById(id).classList.add('hidden');
+        }
+
+        // Campus Filter Rendering
+        function filterCampus(campusKey) {
+            // Update Active Tab Styles
+            const tabs = document.querySelectorAll('.campus-tab');
+            tabs.forEach(tab => {
+                tab.className = "campus-tab px-5 py-2.5 rounded-xl font-medium text-sm border bg-white text-gray-700 border-gray-200 hover:bg-gray-100 transition-all";
+            });
+
+            const activeTab = document.getElementById(`tab-${campusKey}`);
+            if(activeTab) {
+                activeTab.className = "campus-tab px-5 py-2.5 rounded-xl font-medium text-sm border bg-navy-800 text-white border-navy-800 transition-all shadow";
+            }
+
+            // Render Detail Container
+            const data = campusData[campusKey];
+            const container = document.getElementById('campus-details');
+            
+            container.innerHTML = `
+                <div class="grid md:grid-cols-12 gap-6 items-center">
+                    <div class="md:col-span-7 space-y-4">
+                        <div class="inline-block bg-emerald-100 text-emerald-800 text-xs font-bold px-3 py-1 rounded-full">
+                            ${data.accreditation}
+                        </div>
+                        <h3 class="font-heading font-bold text-2xl text-navy-900">${data.title}</h3>
+                        <p class="text-xs text-gray-500 flex items-center gap-1.5">
+                            <i data-lucide="map-pin" class="w-4 h-4 text-gold-500"></i> ${data.address}
+                        </p>
+                        <p class="text-xs text-gray-600">
+                            <strong>Kepala Sekolah:</strong> ${data.head}
+                        </p>
+                        
+                        <div class="pt-2">
+                            <h4 class="font-bold text-xs text-navy-800 uppercase tracking-wider mb-2">Fasilitas Utama Kampus:</h4>
+                            <div class="grid grid-cols-2 gap-2 text-xs">
+                                ${data.facilities.map(f => `
+                                    <div class="flex items-center gap-2 p-2 bg-gray-50 rounded-lg">
+                                        <i data-lucide="check" class="w-3.5 h-3.5 text-emerald-600"></i> ${f}
+                                    </div>
+                                `).join('')}
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="md:col-span-5 bg-gradient-to-br from-navy-800 to-navy-900 text-white p-6 rounded-2xl text-center shadow-lg">
+                        <i data-lucide="school" class="w-12 h-12 text-gold-400 mx-auto mb-3"></i>
+                        <h4 class="font-heading font-bold text-lg">Tertarik dengan unit ini?</h4>
+                        <p class="text-xs text-gray-300 mt-1 mb-4">Kuota kelas terbatas untuk setiap tahun ajaran baru.</p>
+                        <button onclick="openModal('ppdbModal')" class="w-full bg-gold-500 hover:bg-gold-600 text-navy-900 font-bold py-2.5 rounded-xl text-xs transition-all shadow">
+                            Daftar di ${data.title.split(' ')[2]} ${data.title.split(' ')[3] || ''}
+                        </button>
+                    </div>
+                </div>
+            `;
+            lucide.createIcons();
+        }
+
+        // Notification Toast Display
+        function showToast(title, message) {
+            const toast = document.getElementById('toastNotification');
+            document.getElementById('toastTitle').textContent = title;
+            document.getElementById('toastMessage').textContent = message;
+
+            toast.classList.remove('hidden');
+            setTimeout(() => {
+                toast.classList.add('hidden');
+            }, 4000);
+        }
+
+        // Handle Form Submissions
+        function handlePpdbSubmit(e) {
+            e.preventDefault();
+            closeModal('ppdbModal');
+            showToast('Pendaftaran Berhasil!', 'Data pendaftaran calon siswa telah kami terima. Tim sekretariat akan menghubungi via WhatsApp.');
+            document.getElementById('ppdbForm').reset();
+        }
+
+        function handleKbhSubmit(e) {
+            e.preventDefault();
+            showToast('Permohonan Konsultasi Terkirim', 'Jadwal konsultasi hukum KBH akan dikonfirmasi lewat nomor kontak Anda.');
+            document.getElementById('kbhForm').reset();
+        }
+    </script>
+</body>
+</html>
