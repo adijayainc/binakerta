@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yayasan Bina Kerta Utama | TK Bina Harapan I</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        navy: {
+                            700: '#183D75',
+                            800: '#0F2C59',
+                            900: '#0A1E3F',
+                        },
+                        gold: {
+                            400: '#F4C430',
+                            500: '#D4AF37',
+                            600: '#AA8929',
+                        },
+                        emerald: {
+                            600: '#2D7A54',
+                            700: '#1E583B',
+                        },
+                        cream: '#FDFBF7'
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        heading: ['Poppins', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        html { scroll-behavior: smooth; }
+        .logo-shadow {
+            filter: drop-shadow(0px 4px 10px rgba(15, 44, 89, 0.15));
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800 font-sans antialiased flex flex-col min-h-screen">
+
+    <!-- HEADER NAVBAR -->
+    <header class="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-gray-100 shadow-sm transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo & Brand Name -->
+                <a href="#" class="flex items-center gap-3 cursor-pointer">
+                    <!-- Emblem Logo Code -->
+                    <svg class="w-12 h-12 logo-shadow" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="100" cy="100" r="94" stroke="#0F2C59" stroke-width="8" fill="#FFFFFF"/>
+                        <circle cx="100" cy="100" r="84" stroke="#D4AF37" stroke-width="3" fill="none"/>
+                        <!-- Sun Rays -->
+                        <g stroke="#D4AF37" stroke-width="4" stroke-linecap="round">
+                            <line x1="100" y1="35" x2="100" y2="22"/>
+                            <line x1="75" y1="42" x2="67" y2="30"/>
+                            <line x1="125" y1="42" x2="133" y2="30"/>
+                            <line x1="55" y1="58" x2="44" y2="49"/>
+                            <line x1="145" y1="58" x2="156" y2="49"/>
+                        </g>
+                        <!-- Sun Disk -->
+                        <path d="M70 70 A35 35 0 0 1 130 70 Z" fill="#F4C430"/>
+                        <!-- Book -->
+                        <path d="M100 85 L145 72 V115 L100 128 Z" fill="#0F2C59"/>
+                        <path d="M100 85 L55 72 V115 L100 128 Z" fill="#183D75"/>
+                        <path d="M100 88 L142 75 V112 L100 125 Z" fill="#D4AF37" opacity="0.3"/>
+                        <path d="M100 85 L100 128" stroke="#D4AF37" stroke-width="3"/>
+                        <!-- Hands -->
+                        <path d="M45 140 C55 125, 80 135, 95 148 C80 155, 60 160, 45 140 Z" fill="#D4AF37"/>
+                        <path d="M155 140 C145 125, 120 135, 105 148 C120 155, 140 160, 155 140 Z" fill="#D4AF37"/>
+                        <!-- Sprout Leaf -->
+                        <path d="M100 142 C92 125, 75 125, 82 110 C98 115, 100 132, 100 142 Z" fill="#2D7A54"/>
+                        <path d="M100 142 C108 125, 125 125, 118 110 C102 115, 100 132, 100 142 Z" fill="#2D7A54"/>
+                    </svg>
+                    <div>
+                        <span class="block font-heading font-extrabold text-lg sm:text-xl text-navy-800 leading-tight tracking-tight">YAYASAN BINA KERTA UTAMA</span>
+                        <span class="block text-xs font-medium text-gold-600 tracking-wider">SK KEMENKUMHAM AHU-0012498.AH.01.04</span>
+                    </div>
+                </a>
+
+                <!-- Desktop Navigation Links -->
+                <nav class="hidden lg:flex items-center gap-6 font-medium text-sm text-gray-700">
+                    <a href="#" class="hover:text-navy-800 transition-colors py-2 px-1">Beranda</a>
+                    <a href="#" class="hover:text-navy-800 transition-colors py-2 px-1">Profil & Legalitas</a>
+                    <a href="#" class="hover:text-navy-800 transition-colors py-2 px-1">TK Bina Harapan</a>
+                    <a href="#" class="hover:text-navy-800 transition-colors py-2 px-1">Sosial & Hukum (KBH)</a>
+                    <a href="#" class="bg-navy-800 text-white hover:bg-navy-700 px-5 py-2.5 rounded-full shadow-md transition-all text-xs font-semibold tracking-wide flex items-center gap-2">
+                        <i data-lucide="user-plus" class="w-4 h-4 text-gold-400"></i> PPDB Online
+                    </a>
+                </nav>
+
+                <!-- Mobile Hamburger Button -->
+                <button onclick="toggleMobileMenu()" class="lg:hidden p-2 rounded-lg text-navy-800 hover:bg-gray-100 focus:outline-none">
+                    <i data-lucide="menu" class="w-7 h-7"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Drawer -->
+        <div id="mobileMenu" class="hidden lg:hidden border-t border-gray-100 bg-white px-4 pt-3 pb-6 space-y-3 shadow-lg">
+            <a href="#" class="block w-full text-left py-2 font-medium text-navy-800 hover:bg-gray-50 rounded px-2">Beranda</a>
+            <a href="#" class="block w-full text-left py-2 font-medium text-navy-800 hover:bg-gray-50 rounded px-2">Profil & Legalitas Yayasan</a>
+            <a href="#" class="block w-full text-left py-2 font-medium text-navy-800 hover:bg-gray-50 rounded px-2">Unit Pendidikan (TK)</a>
+            <a href="#" class="block w-full text-left py-2 font-medium text-navy-800 hover:bg-gray-50 rounded px-2">Program Sosial & Bantuan Hukum</a>
+            <a href="#" class="w-full mt-2 bg-navy-800 text-white text-center py-3 rounded-xl font-semibold flex justify-center items-center gap-2">
+                <i data-lucide="user-plus" class="w-4 h-4 text-gold-400"></i> Pendaftaran PPDB Online
+            </a>
+        </div>
+    </header>
+
+    <!-- MAIN CONTENT AREA (BLANK TEMPLATE) -->
+    <main class="flex-grow">
+        <!-- Page Title & Breadcrumb Header -->
+        <section class="bg-navy-900 text-white py-10 border-b border-gold-500/30">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <!-- Breadcrumb -->
+                <nav class="flex items-center gap-2 text-xs text-gold-400 mb-2">
+                    <a href="#" class="hover:underline flex items-center gap-1">
+                        <i data-lucide="home" class="w-3.5 h-3.5"></i> Beranda
+                    </a>
+                    <span>/</span>
+                    <span class="text-gray-300">Judul Halaman Baru</span>
+                </nav>
+                <h1 class="font-heading font-bold text-3xl sm:text-4xl text-white">Taman Kanak-Kanak Bina Harapan I</h1>
+		<p class="text-gray-300 text-sm mt-1 max-w-2xl">Merupakan sekolah pertama yang didirikan dari tahun ajaran 1978/1979, menjadi tonaggak awal yayasan berdiri</p>
+            </div>
+        </section>
+
+        <!-- Container Body for Future Content -->
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+            <!-- Content Placeholder Container -->
+            <div class="bg-white rounded-3xl border-2 border-dashed border-gray-300 p-8 sm:p-16 text-center shadow-sm">
+                <div class="w-16 h-16 bg-navy-50 text-navy-800 rounded-full flex items-center justify-center mx-auto mb-4 border border-navy-100">
+                    <i data-lucide="file-plus-2" class="w-8 h-8 text-gold-600"></i>
+                </div>
+                <h3 class="font-heading font-bold text-xl text-navy-900 mb-2">Area Konten Siap Diisi</h3>
+                <p class="text-gray-500 text-sm max-w-md mx-auto leading-relaxed">
+                    Silakan tambahkan komponen HTML, teks, tabel, form, atau grid visual sesuai dengan kebutuhan halaman baru ini.
+                </p>
+            </div>
+        </div>
+    </main>
+
+    <!-- FOOTER SECTION -->
+    <footer class="bg-navy-900 text-white border-t border-gold-500/20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+                <!-- Brand Info -->
+                <div class="md:col-span-2 space-y-4">
+                    <div class="flex items-center gap-3">
+                        <svg class="w-10 h-10" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="100" cy="100" r="94" stroke="#FFFFFF" stroke-width="8" fill="#0F2C59"/>
+                            <circle cx="100" cy="100" r="84" stroke="#D4AF37" stroke-width="3" fill="none"/>
+                            <path d="M70 70 A35 35 0 0 1 130 70 Z" fill="#F4C430"/>
+                            <path d="M100 85 L145 72 V115 L100 128 Z" fill="#FFFFFF"/>
+                            <path d="M100 85 L55 72 V115 L100 128 Z" fill="#D4AF37"/>
+                        </svg>
+                        <span class="font-heading font-extrabold text-lg text-white">YAYASAN BINA KERTA UTAMA</span>
+                    </div>
+                    <p class="text-gray-400 text-xs leading-relaxed max-w-md">
+                        Lembaga nirlaba pengelola unit pendidikan Taman Kanak-Kanak Bina Harapan serta penyelenggara kegiatan sosial kemasyarakatan dan bantuan hukum bagi masyarakat.
+                    </p>
+                    <div class="text-xs text-gold-400">
+                        SK KEMENKUMHAM: AHU-0012498.AH.01.04
+                    </div>
+                </div>
+
+                <!-- Navigation Links -->
+                <div>
+                    <h4 class="font-heading font-bold text-sm text-gold-400 mb-3">Tautan Cepat</h4>
+                    <ul class="space-y-2 text-xs text-gray-300">
+                        <li><a href="#" class="hover:text-white">Beranda Utama</a></li>
+                        <li><a href="#" class="hover:text-white">Profil & Legalitas</a></li>
+                        <li><a href="#" class="hover:text-white">TK Bina Harapan I-IV</a></li>
+                        <li><a href="#" class="hover:text-white">Bantuan Hukum (KBH)</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact Info -->
+                <div>
+                    <h4 class="font-heading font-bold text-sm text-gold-400 mb-3">Kontak Pusat</h4>
+                    <ul class="space-y-2 text-xs text-gray-300">
+                        <li class="flex items-center gap-2"><i data-lucide="globe" class="w-4 h-4 text-gold-400"></i> https://binakerta.or.id</li>
+                        <li class="flex items-center gap-2"><i data-lucide="mail" class="w-4 h-4 text-gold-400"></i> info@binakerta.or.id</li>
+                        <li class="flex items-center gap-2"><i data-lucide="phone" class="w-4 h-4 text-gold-400"></i> (021) 7890-1234 / 0812-3456-7890</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="pt-8 border-t border-white/10 text-center text-xs text-gray-400">
+                &copy; 2026 Yayasan Bina Kerta Utama (binakerta.or.id). All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Initialize Lucide Icons
+        document.addEventListener("DOMContentLoaded", () => {
+            lucide.createIcons();
+        });
+
+        // Toggle Mobile Menu Drawer
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobileMenu');
+            menu.classList.toggle('hidden');
+        }
+    </script>
+</body>
+</html>
